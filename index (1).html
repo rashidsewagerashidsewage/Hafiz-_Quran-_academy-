@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafiz Quran Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--em:#0f7a55;--fo:#06382a;--deep:#03231a;--gold:#e0b030;--gold2:#f6d56a;--cream:#fbf8ef;--ink:#12302a;--mut:#5b6f68;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.65 Inter,'Noto Naskh Arabic',sans-serif}
+html[lang=ur] body{font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;line-height:2.1}
+html[lang=ar] body{font-family:'Noto Naskh Arabic',serif}
+h1,h2,h3{font-family:'Playfair Display','Noto Naskh Arabic',serif;line-height:1.25;margin:0 0 .5em}
+html[lang=ur] h1,html[lang=ur] h2,html[lang=ur] h3{font-family:'Noto Nastaliq Urdu',serif;line-height:1.9}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-family:'Noto Naskh Arabic',serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:auto;padding:0 20px}
+section{padding:84px 0;position:relative}
+.sh{text-align:center;max-width:640px;margin:0 auto 44px}
+.sh h2{font-size:clamp(28px,4vw,40px);color:var(--fo)}
+.sh p{color:var(--mut);margin:0}
+.sh::after{content:"✦";display:block;color:var(--gold);margin-top:10px}
+.btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:600;border:2px solid var(--gold);cursor:pointer;font-family:inherit;font-size:15px;transition:.25s}
+.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--deep);box-shadow:0 6px 22px rgba(224,176,48,.35)}
+.gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(224,176,48,.55)}
+.ghost{color:#fff;background:rgba(255,255,255,.06)}
+.ghost:hover{background:var(--gold);color:var(--deep)}
+.dark-ghost{color:var(--fo);border-color:var(--em)}
+.dark-ghost:hover{background:var(--em);color:#fff}
+.cb{height:112px;margin:-28px -24px 0;border-radius:24px 24px 0 0;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 120%,rgba(246,214,106,.45),transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 3l7 16 16 7-16 7-7 16-7-16-16-7 16-7z' fill='none' stroke='%23f6d56a' stroke-opacity='.25'/%3E%3C/svg%3E"),linear-gradient(135deg,#0f7a55,#04281e)}
+.cb span{font:700 46px/1.4 'Noto Naskh Arabic',serif;color:var(--gold2);text-shadow:0 0 22px rgba(246,214,106,.7)}
+.cb::after{content:"☾";position:absolute;top:8px;inset-inline-end:14px;color:var(--gold2);opacity:.7;font-size:20px}
+.cb+.ic{margin-top:-34px;position:relative;border:3px solid #fff}
+.ok{margin-top:18px;background:rgba(15,122,85,.08);border:1px solid var(--em);border-radius:16px;padding:16px;text-align:center}.form .ok .btn{width:auto;margin:6px;display:inline-block}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(3,35,26,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(224,176,48,.3);padding-top:env(safe-area-inset-top,0px)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
+.logo{font:700 20px 'Playfair Display',serif;color:var(--gold2);white-space:nowrap}
+nav{display:flex;gap:18px}
+nav a{color:#e9efe9;font-size:14px;font-weight:500;transition:.2s}
+nav a:hover{color:var(--gold2)}
+.lang{display:flex;gap:2px;border:1px solid rgba(224,176,48,.5);border-radius:999px;padding:3px}
+.lang button{background:none;border:0;color:#e9efe9;padding:4px 10px;border-radius:999px;cursor:pointer;font:inherit;font-size:13px}
+.lang button.on{background:var(--gold);color:var(--deep);font-weight:600}
+.burger{display:none;background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:10px;font-size:22px;width:44px;height:44px;cursor:pointer}
+.hr{display:flex;align-items:center;gap:12px}
+/* hero */
+.hero{min-height:calc(100vh - 70px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--deep);padding:70px 0}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2}
+.ht{max-width:560px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);color:#fff}
+.hero p{font-size:18px;color:#d8e6df;margin:0 0 18px}
+.hl{display:inline-block;color:var(--gold2);border:1px solid rgba(224,176,48,.5);border-radius:999px;padding:6px 18px;font-weight:600;margin-bottom:28px;background:rgba(224,176,48,.08)}
+.bs{display:flex;flex-wrap:wrap;gap:14px}
+.sub-ur{margin-top:26px;border-inline-start:3px solid var(--gold);padding-inline-start:16px;color:#cfe3d9;font-size:15px}
+.sub-ur b{display:block;color:var(--gold2);font-size:20px;font-family:'Noto Nastaliq Urdu',serif;line-height:2}
+/* cards */
+.g{display:grid;gap:22px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border-radius:24px;padding:28px 24px;border:1px solid rgba(15,122,85,.12);box-shadow:0 10px 30px rgba(6,56,42,.07);transition:.3s;position:relative}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 16px 40px rgba(224,176,48,.28)}
+.ic{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:28px;margin-bottom:14px;background:linear-gradient(135deg,var(--em),var(--fo));box-shadow:0 0 0 4px rgba(224,176,48,.25)}
+.card h3{font-size:20px;color:var(--fo);margin-bottom:2px}
+.ur{color:var(--em);font:600 17px 'Noto Nastaliq Urdu',serif;margin-bottom:6px;line-height:2}
+.card p{color:var(--mut);font-size:15px;margin:0 0 14px}
+.kid{display:block;width:54px;height:54px;margin:0 0 8px}.lm{display:inline-block;padding:9px 22px;border-radius:999px;border:2px solid var(--gold);color:var(--fo);font-weight:600;font-size:14px;transition:.25s}.lm:hover{background:var(--gold);color:var(--deep)}.flash{animation:fl 1.8s .5s}@keyframes fl{0%,100%{box-shadow:0 0 0 0 rgba(224,176,48,0)}35%{box-shadow:0 0 0 7px rgba(224,176,48,.55)}}
+.pat{background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 4l9 21 21 9-21 9-9 21-9-21-21-9 21-9z' fill='none' stroke='%23e0b030' stroke-opacity='.18'/%3E%3C/svg%3E")}
+.who .card{text-align:center}
+.who .ic{margin:0 auto 14px;width:76px;height:76px;font-size:36px}
+.dk{background:linear-gradient(160deg,var(--fo),var(--deep));color:#fff}
+.dk .sh h2{color:#fff}.dk .sh p{color:#bcd3c9}
+.feat{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(224,176,48,.25);border-radius:20px;padding:18px;transition:.3s}
+.feat:hover{border-color:var(--gold);background:rgba(224,176,48,.1)}
+.feat .ic{margin:0;flex:none;width:52px;height:52px;font-size:24px;background:rgba(15,122,85,.7)}
+.feat span{font-weight:500}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;inset-inline:12%;border-top:2px dashed var(--gold)}
+.step{text-align:center;position:relative}
+.num{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--deep);font:700 26px 'Playfair Display',serif;display:grid;place-items:center;margin:0 auto 16px;box-shadow:0 0 0 6px var(--cream),0 6px 20px rgba(224,176,48,.4)}
+.step h3{font-size:19px;color:var(--fo)}.step p{color:var(--mut);margin:0;font-size:15px}
+/* about / teacher */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.art{border-radius:28px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 50px rgba(6,56,42,.25);border:3px solid var(--gold)}
+.art svg{width:100%;height:100%;display:block}
+.two h2{font-size:clamp(28px,4vw,38px);color:var(--fo)}
+.tl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.tl li{background:rgba(15,122,85,.1);color:var(--fo);border:1px solid rgba(15,122,85,.25);border-radius:999px;padding:4px 14px;font-size:14px}
+/* forms */
+.form{max-width:760px;margin:auto;background:#fff;border-radius:28px;padding:34px;border:1px solid rgba(224,176,48,.45);box-shadow:0 20px 50px rgba(6,56,42,.1)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg .full{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:600;color:var(--fo);margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #d3e0da;border-radius:14px;font:inherit;font-size:15px;background:var(--cream);color:var(--ink)}
+input:focus,select:focus,textarea:focus,summary:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.priv{font-size:13px;color:var(--mut);text-align:center;margin:16px 0 0}
+.form .btn{width:100%;margin-top:18px}
+/* cta */
+.cta{background:radial-gradient(circle at 50% 0,rgba(224,176,48,.28),transparent 55%),linear-gradient(135deg,var(--em),var(--deep));color:#fff;text-align:center}
+.cta h2{font-size:clamp(28px,4.4vw,44px)}
+.cta .u{font-family:'Noto Nastaliq Urdu',serif;font-size:20px;color:var(--gold2);line-height:2}
+.cta .ci{margin:22px 0;font-size:18px}.cta .ci div{margin:4px 0}
+.cta .bs{justify-content:center}
+/* testimonials, faq */
+.tc{text-align:center;border-style:dashed;border-color:rgba(224,176,48,.7)}
+.tc .q{font-size:46px;color:var(--gold);line-height:1}
+.tc h3{font-size:18px}.tc p{font-style:italic}
+details{background:#fff;border:1px solid rgba(15,122,85,.15);border-radius:18px;margin-bottom:12px;overflow:hidden;transition:.2s}
+details[open]{border-color:var(--gold);box-shadow:0 8px 24px rgba(224,176,48,.2)}
+summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--fo);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 22px 20px;color:var(--mut)}
+.faqw{max-width:780px;margin:auto}
+/* contact */
+.cl{display:grid;gap:14px;margin:18px 0}
+.cl a{display:flex;gap:12px;align-items:center;background:#fff;border-radius:16px;padding:14px 18px;border:1px solid rgba(15,122,85,.15)}
+.cl a:hover{border-color:var(--gold)}
+.soc{display:flex;gap:12px;flex-wrap:wrap}
+/* footer */
+footer{background:var(--deep);color:#c5d8cf;padding:56px 0 26px;border-top:2px solid var(--gold)}
+.fgd{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+footer h3{color:var(--gold2);font-size:18px}
+footer a{display:block;margin-bottom:6px;font-size:14px}footer a:hover{color:var(--gold2)}
+.tag{color:var(--gold2);font-size:14px}
+.cp{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;text-align:center;font-size:13px}
+.fw{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;z-index:60;background:#25d366;color:#fff;font-weight:600;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35);display:flex;gap:8px;align-items:center;animation:pulse 2.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 14px rgba(37,211,102,0)}}
+@media(max-width:1000px){nav{display:none;position:absolute;top:100%;inset-inline:0;background:var(--deep);flex-direction:column;padding:18px 24px;gap:4px;border-bottom:2px solid var(--gold)}nav.open{display:flex}nav a{padding:12px 0;font-size:16px}.burger{display:block}.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){section{padding:60px 0}.two,.fgd{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}.fg{grid-template-columns:1fr}.g3{grid-template-columns:1fr}.logo{font-size:16px}.lang button{padding:4px 7px}.form{padding:22px}.bs .btn{flex:1;text-align:center}.fw span{display:none}.fw{padding:15px}}
+@media(max-width:480px){.g4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* course detail modal */
+.course-modal{position:fixed;inset:0;background:rgba(2,20,14,.72);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+.course-modal.show{display:flex}
+.course-modal-box{width:min(680px,100%);max-height:90vh;overflow:auto;background:#fffaf0;border:1px solid rgba(224,176,48,.55);border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.4);position:relative;padding:32px}
+.course-modal-close{position:absolute;top:14px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,122,85,.25);background:#fff;color:#06382a;font-size:25px;cursor:pointer}
+.course-modal-icon{font-size:44px;margin-bottom:8px}.course-modal-box h2{color:#06382a;margin:0 0 8px}.course-modal-box .arabic{color:#b88708;font-size:17px;font-weight:700;margin-bottom:16px}.course-modal-box p{color:#385348;line-height:1.8}.course-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.course-point{background:#fff;border:1px solid rgba(15,122,85,.14);border-radius:12px;padding:12px;color:#21463a}.course-point::before{content:'✓ ';color:#b88708;font-weight:700}@media(max-width:600px){.course-modal-box{padding:24px 18px}.course-points{grid-template-columns:1fr}}
+
+/* Full course, fee and timetable controls */
+.fee-time-section{background:#fffaf0}
+.fee-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fee-card{background:#fff;border:1px solid rgba(15,122,85,.16);border-radius:18px;padding:20px;box-shadow:0 10px 28px rgba(6,56,42,.06);transition:.2s}
+.fee-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(6,56,42,.1)}
+.fee-card .fee-icon{font-size:34px}.fee-card h3{color:var(--fo);margin:8px 0 5px}.fee-price{font-size:26px;font-weight:800;color:#b88708}.fee-note{font-size:13px;color:#60756d;line-height:1.6}
+.schedule-wrap{margin-top:28px;background:#06382a;border-radius:22px;padding:24px;overflow:auto}
+.schedule-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;min-width:720px}
+.time-slot{background:rgba(255,255,255,.08);border:1px solid rgba(246,213,106,.18);border-radius:12px;padding:12px;text-align:center;color:#fff}
+.time-slot b{display:block;color:#f6d56a;margin-bottom:4px}.time-slot span{font-size:13px;color:#d9e8e1}
+.fee-note-box{margin-top:16px;padding:14px 16px;border-radius:14px;background:#f8efcf;color:#604d16;line-height:1.7}
+.feature-btn{cursor:pointer;position:relative}.feature-btn .mini-arrow{font-size:12px;color:#b88708;margin-top:7px;display:block}
+.course-modal-fee{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8efcf;border-radius:14px;padding:14px 16px;margin:16px 0;color:#604d16}
+.course-modal-fee strong{font-size:22px;color:#a97800}
+.course-modal-schedule{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 20px}
+.mini-time{background:#fff;border:1px solid rgba(15,122,85,.14);border-radius:10px;padding:9px;color:#385348;font-size:13px}
+@media(max-width:900px){.fee-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.fee-grid{grid-template-columns:1fr}.schedule-wrap{padding:16px}.course-modal-schedule{grid-template-columns:1fr}.course-modal-fee{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="kid" viewBox="0 0 64 64"><path d="M10 64v-8q0-14 22-14t22 14v8z" fill="#0f7a55"/><path d="M26 43l6 9 6-9z" fill="#fff"/><circle cx="32" cy="28" r="14" fill="#f3cfa6"/><path d="M18.5 23q0-13 13.5-13t13.5 13z" fill="#fff" stroke="#e0b030" stroke-width="1.5"/><path d="M19 20h26" stroke="#e0b030" stroke-width="2"/><circle cx="27" cy="29" r="1.7" fill="#2b1b10"/><circle cx="37" cy="29" r="1.7" fill="#2b1b10"/><circle cx="24" cy="33" r="2.4" fill="#f08a7a" opacity=".4"/><circle cx="40" cy="33" r="2.4" fill="#f08a7a" opacity=".4"/><path d="M28 34.5q4 3.6 8 0" stroke="#8a4b2a" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M18 61l14-4 14 4v-9l-14-4-14 4z" fill="#fffaf0" stroke="#e0b030" stroke-width="1.5"/><path d="M32 57v-9" stroke="#e0b030" stroke-width="1.5"/></symbol></svg>
+<header><div class="wrap hb">
+<a href="#home" class="logo">☾ Hafiz Quran Academy</a>
+<nav id="nav">
+<a href="#home" data-t="n1">Home</a><a href="#about" data-t="n2">About Us</a><a href="#courses" data-t="n3">Courses</a><a href="#fees" data-t="fhFees">Fees & Timetable</a><a href="#teachers" data-t="n4">Teachers</a><a href="#how" data-t="n5">How It Works</a><a href="#registration" data-t="n6">Registration</a><a href="#faq" data-t="n7">FAQ</a><a href="#contact" data-t="n8">Contact</a>
+</nav>
+<div class="hr">
+<div class="lang"><button data-l="en" class="on">English</button><button data-l="ur">اردو</button><button data-l="ar">العربية</button></div>
+<a href="#registration" class="btn gold" data-t="join" style="padding:10px 20px">JOIN NOW</a>
+<button class="burger" id="bg" aria-label="Menu">☰</button>
+</div></div></header>
+
+<section class="hero" id="home" style="padding:70px 0">
+<svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<radialGradient id="bg1" cx="75%" cy="35%" r="80%"><stop offset="0" stop-color="#14946a"/><stop offset=".5" stop-color="#06382a"/><stop offset="1" stop-color="#021a13"/></radialGradient>
+<radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f6d56a" stop-opacity=".55"/><stop offset="1" stop-color="#f6d56a" stop-opacity="0"/></radialGradient>
+<linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#6b3f1d"/><stop offset="1" stop-color="#9a6130"/></linearGradient>
+<pattern id="gp" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M40 4l9 21 21 9-21 9-9 21-9-21-21-9 21-9z" fill="none" stroke="#e0b030" stroke-opacity=".12"/></pattern>
+</defs>
+<rect width="1200" height="700" fill="url(#bg1)"/><rect width="1200" height="700" fill="url(#gp)"/>
+<circle cx="900" cy="170" r="230" fill="url(#gl)"/>
+<g fill="#f6d56a"><path d="M930 90a70 70 0 1 0 0 140a56 56 0 1 1 0-140z"/><path d="M990 120l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/></g>
+<g stroke="#f6d56a" stroke-opacity=".12" stroke-width="30"><path d="M900 160L420 700M900 160L720 700M900 160L1100 700"/></g>
+<g fill="#021a13" opacity=".75"><path d="M560 560v-140q0-70 90-110 90 40 90 110v140zM650 290v-40M610 560V330h-20v230zM710 560V330h20v230z"/><rect x="540" y="300" width="14" height="260"/><path d="M547 300l-10-24h28zM547 276v-18"/><path d="M900 560v-120q0-60 75-95 75 35 75 120v95z"/><rect x="1080" y="360" width="16" height="200"/><path d="M1088 360l-11-26h22z"/><rect x="0" y="560" width="1200" height="140"/></g>
+<g><path d="M770 620l-60 40h340l-60-40z" fill="url(#wd)"/><path d="M720 560l130 40 130-40v70l-130 30-130-30z" fill="#7a4a24"/>
+<path d="M730 548l120 38v-60l-120-35z" fill="#fffaf0"/><path d="M970 548l-120 38v-60l120-35z" fill="#f4ecd8"/>
+<path d="M745 530l95 30M745 545l95 30M960 530l-95 30M960 545l-95 30" stroke="#0f7a55" stroke-width="2" opacity=".6"/>
+<path d="M850 526v60" stroke="#e0b030" stroke-width="2"/></g>
+<g fill="#f6d56a"><circle cx="300" cy="150" r="2.5"/><circle cx="520" cy="90" r="2"/><circle cx="640" cy="230" r="3"/><circle cx="1050" cy="250" r="2.5"/><circle cx="780" cy="410" r="2"/><circle cx="200" cy="420" r="2"/><circle cx="1130" cy="440" r="3"/></g>
+<rect width="1200" height="700" fill="#021a13" opacity=".25"/>
+</svg>
+<div class="wrap"><div class="ht">
+<h1 data-t="h1">Learn Quran Online with Qualified Teachers</h1>
+<p data-t="hs">Learn Quran, Hifz, Tajweed and Islamic Studies from the comfort of your home.</p>
+<div class="hl" data-t="hl">Quran • Hifz • Tajweed • Islamic Studies</div>
+<div class="bs"><a href="#registration" class="btn gold" data-t="start">Start Learning</a><a href="https://wa.me/923051311911" class="btn ghost" target="_blank" rel="noopener" data-t="wa">WhatsApp Us</a></div>
+<div class="sub-ur" dir="rtl" lang="ur"><b>گھر بیٹھے قرآن مجید سیکھیں</b>ناظرہ قرآن، حفظ، تجوید، ترجمہ اور اسلامی تعلیمات آن لائن سیکھیں۔</div>
+<div class="sub-ur" dir="rtl" lang="ar" style="margin-top:14px"><b style="font-family:'Noto Naskh Arabic',serif;line-height:1.6">تعلّم القرآن الكريم عبر الإنترنت</b>تعلّم القرآن الكريم والتجويد والحفظ والدراسات الإسلامية من منزلك.</div>
+</div></div></section>
+
+<section id="courses" class="pat"><div class="wrap">
+<div class="sh"><h2 data-t="ch">Our Courses</h2></div>
+<div class="g g4" id="cg"></div>
+</div></section>
+
+<section id="fees" class="fee-time-section"><div class="wrap">
+<div class="sh"><h2 data-t="fhFees">Fees & Timetable</h2><p data-t="fsFees">Simple monthly fees and flexible class times.</p></div>
+<div class="fee-grid" id="feeGrid"></div>
+<div class="schedule-wrap">
+<h3 style="color:#f6d56a;margin:0 0 14px" data-t="scheduleTitle">Daily Class Timetable</h3>
+<p style="color:#d9e8e1;margin:0 0 16px" data-t="scheduleSub">Available class slots from 6:00 AM to 10:00 PM.</p>
+<div class="schedule-grid" id="scheduleGrid"></div>
+<div class="fee-note-box" data-t="feeNote">Fees are suggested monthly rates for one-to-one online classes. Final fee and timing can be confirmed on WhatsApp according to the course, class duration and student needs.</div>
+</div>
+</div></section>
+
+<section class="dk who"><div class="wrap">
+<div class="sh"><h2 data-t="wh">Who Can Join?</h2><p data-t="ws">Online Quran classes for different learners.</p></div>
+<div class="g g4">
+<div class="card"><div class="ic">🧒</div><h3 data-t="w1">Children</h3><a href="#registration" class="btn gold" data-m="Children" data-t="rn" style="padding:10px 24px;margin-top:14px">Register Now</a></div>
+<div class="card"><div class="ic">👨</div><h3 data-t="w2">Adults</h3><a href="#registration" class="btn gold" data-m="Adults" data-t="rn" style="padding:10px 24px;margin-top:14px">Register Now</a></div>
+<div class="card"><div class="ic">🧕</div><h3 data-t="w3">Women</h3><a href="#registration" class="btn gold" data-m="Women" data-t="rn" style="padding:10px 24px;margin-top:14px">Register Now</a></div>
+<div class="card"><div class="ic">🌱</div><h3 data-t="w4">Beginners</h3><a href="#registration" class="btn gold" data-m="Beginners" data-t="rn" style="padding:10px 24px;margin-top:14px">Register Now</a></div>
+</div></div></section>
+
+<section class="pat"><div class="wrap">
+<div class="sh"><h2 data-t="yh">Why Choose Us</h2></div>
+<div class="g g4" id="fg" style="--x:1"></div>
+</div></section>
+
+<section id="how" class="dk"><div class="wrap">
+<div class="sh"><h2 data-t="hh">How It Works</h2></div>
+<div class="steps" id="st"></div>
+</div></section>
+
+<section id="about" class="pat"><div class="wrap two">
+<div class="art"><svg viewBox="0 0 400 300"><defs><linearGradient id="ab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe9a8"/><stop offset=".5" stop-color="#17987a"/><stop offset="1" stop-color="#06382a"/></linearGradient></defs><rect width="400" height="300" fill="url(#ab)"/><g fill="#06382a" opacity=".85"><path d="M0 300V200q40-60 80 0t80 0 80 0 80 0v100z"/></g><g fill="none" stroke="#e0b030" stroke-width="3"><path d="M60 200v-80a30 30 0 0 1 60 0v80M140 200v-100a30 30 0 0 1 60 0v100M220 200v-80a30 30 0 0 1 60 0v80M300 200v-100a30 30 0 0 1 60 0v100"/></g><circle cx="200" cy="70" r="40" fill="#f6d56a" opacity=".5"/><path d="M110 270l90-26 90 26v-40l-90-24-90 24z" fill="#fffaf0" stroke="#e0b030" stroke-width="2"/><path d="M200 244v-38" stroke="#e0b030" stroke-width="2"/></svg></div>
+<div><h2 data-t="ah">About Hafiz Quran Academy</h2><p data-t="at">Hafiz Quran Academy is an Online Quran Learning Platform for children and adults. Our goal is to make Quran and Islamic education accessible, organized and easy to learn from home.</p>
+<p lang="ur" dir="rtl" style="font-size:17px;color:var(--em)">حافظ قرآن اکیڈمی کا مقصد قرآن مجید اور بنیادی اسلامی تعلیمات کو آسان، منظم اور آن لائن انداز میں قابلِ رسائی بنانا ہے۔</p></div>
+</div></section>
+
+<section id="teachers" class="dk"><div class="wrap two">
+<div class="art" style="order:0;aspect-ratio:4/5;max-width:400px;width:100%;margin:auto"><img src="data:image/jpeg;base64,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" alt="Rashid Manzoor" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+<div><h2 style="color:#fff">Rashid Manzoor</h2><p style="color:var(--gold2);font-weight:600" data-t="tt">Quran & Islamic Studies Teacher</p><span class="hl" style="margin-bottom:20px;font-size:15px" data-t="exp">8 Years of Experience</span>
+<p style="color:#bcd3c9;margin-bottom:8px" data-t="ta">Teaching Areas</p>
+<ul class="tl" id="tl" style="--d:1"></ul>
+<a href="#contact" class="btn gold" data-t="tb">Contact Teacher</a></div>
+</div></section>
+
+<section id="registration" class="pat"><div class="wrap">
+<div class="sh"><h2 data-t="rh">Join Hafiz Quran Academy</h2></div>
+<form class="form" id="rf"><div class="fg">
+<div><label data-t="f1">Full Name</label><input name="n" required></div>
+<div><label data-t="f2">Age</label><input name="a" type="number" min="3" max="99"></div>
+<div><label data-t="f3">Country</label><input name="c"></div>
+<div><label data-t="f4">Select Course</label><select name="s" id="cs"></select></div>
+<div><label data-t="f5">Preferred Class Time</label><select name="t" id="timeSelect"></select></div>
+<div><label data-t="f6">WhatsApp Number</label><input name="w" type="tel" required></div>
+<div class="full"><label data-t="f7">Message</label><textarea name="m" rows="4"></textarea></div></div>
+<button class="btn gold" type="submit" data-t="sub">Submit Registration</button>
+<div class="ok" id="rok" hidden></div><p class="priv" data-t="pv">🔒 Your information is kept private and used only to contact you about your classes.</p></form>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2 data-t="ctah">Start Your Quran Learning Journey</h2>
+<div class="u" lang="ur">اپنی قرآن کلاس شروع کرنے کے لیے آج ہی رابطہ کریں۔</div>
+<div class="ci"><div>WhatsApp: 03051311911</div><div>Email: rashidsewagerashidsewage@gmail.com</div></div>
+<div class="bs"><a href="https://wa.me/923051311911" target="_blank" rel="noopener" class="btn gold" data-t="wa">WhatsApp Us</a><a href="#registration" class="btn ghost" data-t="rn">Register Now</a></div>
+</div></section>
+
+<section class="pat"><div class="wrap">
+<div class="sh"><h2 data-t="th">Testimonials</h2></div>
+<div class="g g3">
+<div class="card tc"><div class="q">“</div><h3 data-t="tr">Student Review</h3><p data-t="tp">“Real student feedback will appear here.”</p></div>
+<div class="card tc"><div class="q">“</div><h3 data-t="tr">Student Review</h3><p data-t="tp">“Real student feedback will appear here.”</p></div>
+<div class="card tc"><div class="q">“</div><h3 data-t="tr">Student Review</h3><p data-t="tp">“Real student feedback will appear here.”</p></div>
+</div></div></section>
+
+<section id="faq" class="dk"><div class="wrap">
+<div class="sh"><h2 data-t="fh">FAQ</h2></div>
+<div class="faqw" id="fq"></div>
+</div></section>
+
+<section id="contact" class="pat"><div class="wrap two" style="align-items:start">
+<div><h2 data-t="cth" style="color:var(--fo);font-size:36px">Contact</h2>
+<div class="cl"><a href="https://wa.me/923051311911" target="_blank" rel="noopener">📱 WhatsApp / Phone: 03051311911</a><a href="mailto:rashidsewagerashidsewage@gmail.com">✉️ rashidsewagerashidsewage@gmail.com</a></div>
+<div class="soc"><a class="btn dark-ghost" href="https://www.facebook.com/share/p/19PeqEYQya/" target="_blank" rel="noopener" style="padding:9px 22px">Facebook</a><a class="btn dark-ghost" href="https://www.fiverr.com/s/VrYyY9z" target="_blank" rel="noopener" style="padding:9px 22px">Fiverr</a></div>
+<a href="https://wa.me/923051311911" target="_blank" rel="noopener" class="btn gold" style="margin-top:22px" data-t="wa">WhatsApp Us</a></div>
+<form class="form" id="cf" style="padding:26px;max-width:none"><div class="fg">
+<div class="full"><label data-t="f1">Full Name</label><input name="n" required></div>
+<div class="full"><label>Email</label><input name="e" type="email"></div>
+<div class="full"><label data-t="f7">Message</label><textarea name="m" rows="4" required></textarea></div></div>
+<button class="btn gold" type="submit" data-t="send">Send Message</button><div class="ok" id="cok" hidden></div></form>
+</div></section>
+
+
+<div class="course-modal" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="courseModalTitle">
+  <div class="course-modal-box">
+    <button class="course-modal-close" id="courseModalClose" type="button" aria-label="Close">×</button>
+    <div class="course-modal-icon" id="courseModalIcon">📖</div>
+    <h2 id="courseModalTitle">Course</h2>
+    <div class="arabic" id="courseModalArabic"></div>
+    <p id="courseModalDesc"></p>
+    <div class="course-points" id="courseModalPoints"></div>
+    <div class="course-modal-fee"><span data-t="modalFeeLabel">Suggested monthly fee</span><strong id="courseModalFee">PKR 2,500</strong></div>
+    <div class="course-modal-schedule" id="courseModalSchedule"></div>
+    <a href="#registration" class="btn gold" id="courseModalRegister" data-t="modalRegister">Register for this course</a>
+  </div>
+</div>
+
+<footer><div class="wrap">
+<div class="fgd">
+<div><h3>☾ Hafiz Quran Academy</h3><div class="tag" data-t="tag">Learn Quran • Understand Islam • Live by the Quran</div></div>
+<div><h3 data-t="ql">Quick Links</h3><a href="#home" data-t="n1">Home</a><a href="#about" data-t="n2">About</a><a href="#courses" data-t="n3">Courses</a><a href="#teachers" data-t="n4">Teachers</a><a href="#registration" data-t="n6">Registration</a><a href="#faq" data-t="n7">FAQ</a><a href="#contact" data-t="n8">Contact</a></div>
+<div><h3 data-t="lg">Languages</h3><a href="#" data-l="en">English</a><a href="#" data-l="ur">اردو</a><a href="#" data-l="ar">العربية</a></div>
+<div><h3 data-t="so">Social</h3><a href="https://www.facebook.com/share/p/19PeqEYQya/" target="_blank" rel="noopener">Facebook</a><a href="https://www.fiverr.com/s/VrYyY9z" target="_blank" rel="noopener">Fiverr</a></div>
+</div>
+<div class="cp">© 2026 Hafiz Quran Academy. All Rights Reserved.</div></div></footer>
+
+<a class="fw" href="https://wa.me/923051311911" target="_blank" rel="noopener" aria-label="WhatsApp Us">💬 <span data-t="wa">WhatsApp Us</span></a>
+
+<script>
+const T={
+en:{n1:"Home",n2:"About Us",n3:"Courses",n4:"Teachers",n5:"How It Works",n6:"Registration",n7:"FAQ",n8:"Contact",join:"JOIN NOW",
+h1:"Learn Quran Online with Qualified Teachers",hs:"Learn Quran, Hifz, Tajweed and Islamic Studies from the comfort of your home.",hl:"Quran • Hifz • Tajweed • Islamic Studies",start:"Start Learning",wa:"WhatsApp Us",
+ch:"Our Courses",lm:"Learn More",fhFees:"Fees & Timetable",fsFees:"Simple monthly fees and flexible class times.",scheduleTitle:"Daily Class Timetable",scheduleSub:"Available class slots from 6:00 AM to 10:00 PM.",feeNote:"Fees are suggested monthly rates for one-to-one online classes. Final fee and timing can be confirmed on WhatsApp according to the course, class duration and student needs.",modalFeeLabel:"Suggested monthly fee",modalRegister:"Register for this course",
+c1:"Nazra Quran",c2:"Hifz-ul-Quran",c3:"Tajweed",c4:"Quran Translation",c5:"Duas & Azkar",c6:"Islamic Studies",c7:"Short Surahs",c8:"Basic Arabic",
+d1:"Learn to read the Holy Quran correctly and fluently.",d2:"Learn Quran memorization through a structured learning program.",d3:"Learn correct pronunciation, Makharij and essential Tajweed rules.",d4:"Understand selected Quranic verses and their basic meanings.",d5:"Learn daily Masnoon Duas and Azkar.",d6:"Learn Salah, Kalimas, Taharah, Islamic manners and basic Islamic knowledge.",d7:"Learn short Quranic Surahs for children and beginners.",d8:"Learn basic Arabic vocabulary and concepts for understanding the Quran.",
+wh:"Who Can Join?",ws:"Online Quran classes for different learners.",w1:"Children",w2:"Adults",w3:"Women",w4:"Beginners",
+yh:"Why Choose Us",y1:"Online Quran Classes",y2:"Flexible Class Timings",y3:"One-to-One Learning",y4:"Children & Adults",y5:"Beginner Friendly",y6:"Quran + Islamic Studies",y7:"Mobile Friendly",y8:"Students From Different Countries",
+hh:"How It Works",s1:"Register Now",s2:"Choose Your Course",s3:"Set Your Class Time",s4:"Start Learning",e1:"Submit your information.",e2:"Select your preferred Quran or Islamic course.",e3:"Choose a suitable class schedule.",e4:"Begin your Quran learning journey from home.",
+ah:"About Hafiz Quran Academy",at:"Hafiz Quran Academy is an Online Quran Learning Platform for children and adults. Our goal is to make Quran and Islamic education accessible, organized and easy to learn from home.",
+exp:"8 Years of Experience",tt:"Quran & Islamic Studies Teacher",ta:"Teaching Areas",tb:"Contact Teacher",
+ar:["Quran","Nazra","Hifz","Tajweed","Islamic Studies","Duas & Azkar","Short Surahs","Basic Arabic"],
+rh:"Join Hafiz Quran Academy",f1:"Full Name",f2:"Age",f3:"Country",f4:"Select Course",f5:"Preferred Class Time",f6:"WhatsApp Number",f7:"Message",sub:"Submit Registration",pv:"🔒 Your information is kept private and used only to contact you about your classes.",
+ctah:"Start Your Quran Learning Journey",rn:"Register Now",th:"Testimonials",tr:"Student Review",tp:"“Real student feedback will appear here.”",fh:"FAQ",
+q1:"Are the classes online?",q2:"Can children join?",q3:"Can adults join?",q4:"What do I need for class?",q5:"Can students from other countries join?",q6:"Which courses are available?",q7:"How can I register?",q8:"How can I contact the academy?",
+a1:"Yes. All classes are held online, so you can learn from home.",a2:"Yes. Children are welcome, including beginners.",a3:"Yes. Adults of every level are welcome.",a4:"A phone, tablet or computer with internet, a Quran, and a quiet place to study.",a5:"Yes. Students from different countries can join online.",a6:"Nazra, Hifz, Tajweed, Quran Translation, Duas & Azkar, Islamic Studies, Short Surahs, Basic Arabic, Namaz & Kalimas and Quran for Kids.",a7:"Fill in the registration form on this page, or message us on WhatsApp.",a8:"WhatsApp or call 03051311911, or email rashidsewagerashidsewage@gmail.com.",
+sent:"Thank you! Choose how to send your details:",viaw:"Send on WhatsApp",viae:"Send by Email",cth:"Contact",send:"Send Message",tag:"Learn Quran • Understand Islam • Live by the Quran",ql:"Quick Links",lg:"Languages",so:"Social"},
+ur:{n1:"ہوم",n2:"ہمارے بارے میں",n3:"کورسز",n4:"اساتذہ",n5:"طریقہ کار",n6:"رجسٹریشن",n7:"سوالات",n8:"رابطہ",join:"ابھی شامل ہوں",
+h1:"گھر بیٹھے قرآن مجید سیکھیں",hs:"ناظرہ قرآن، حفظ، تجوید، ترجمہ اور اسلامی تعلیمات آن لائن سیکھیں۔",hl:"قرآن • حفظ • تجوید • اسلامی تعلیمات",start:"سیکھنا شروع کریں",wa:"واٹس ایپ کریں",
+ch:"ہمارے کورسز",lm:"مزید جانیں",fhFees:"فیس اور ٹائم ٹیبل",fsFees:"مناسب ماہانہ فیس اور صبح 6 بجے سے رات 10 بجے تک اوقات۔",scheduleTitle:"روزانہ کلاس ٹائم ٹیبل",scheduleSub:"کلاس کے اوقات صبح 6:00 بجے سے رات 10:00 بجے تک دستیاب ہیں۔",feeNote:"یہ ایک فرد کی آن لائن کلاس کے لیے تجویز کردہ ماہانہ فیس ہے۔ کورس، کلاس کے دورانیے اور طالب علم کی ضرورت کے مطابق حتمی فیس اور وقت واٹس ایپ پر طے کیا جا سکتا ہے۔",modalFeeLabel:"تجویز کردہ ماہانہ فیس",modalRegister:"اس کورس میں رجسٹر کریں",
+c1:"ناظرہ قرآن",c2:"حفظ القرآن",c3:"تجوید القرآن",c4:"ترجمہ قرآن",c5:"دعائیں اور اذکار",c6:"اسلامی تعلیمات",c7:"چھوٹی سورتیں",c8:"بنیادی عربی",
+d1:"قرآن مجید کو درست اور روانی سے پڑھنا سیکھیں۔",d2:"منظم تعلیمی پروگرام کے ساتھ قرآن حفظ کریں۔",d3:"درست تلفظ، مخارج اور بنیادی تجوید کے اصول سیکھیں۔",d4:"منتخب آیات اور ان کے بنیادی معانی سمجھیں۔",d5:"روزمرہ مسنون دعائیں اور اذکار سیکھیں۔",d6:"نماز، کلمے، طہارت، اسلامی آداب اور بنیادی اسلامی علم سیکھیں۔",d7:"بچوں اور مبتدی افراد کے لیے چھوٹی سورتیں سیکھیں۔",d8:"قرآن سمجھنے کے لیے بنیادی عربی الفاظ اور تصورات سیکھیں۔",
+wh:"کون شامل ہو سکتا ہے؟",ws:"مختلف طلبہ کے لیے آن لائن قرآن کلاسز۔",w1:"بچے",w2:"بالغ افراد",w3:"خواتین",w4:"مبتدی",
+yh:"ہمیں کیوں منتخب کریں",y1:"آن لائن قرآن کلاسز",y2:"لچکدار اوقات",y3:"ون ٹو ون تعلیم",y4:"بچے اور بالغ",y5:"مبتدی کے لیے آسان",y6:"قرآن + اسلامی تعلیمات",y7:"موبائل فرینڈلی",y8:"مختلف ممالک کے طلبہ",
+hh:"طریقہ کار",s1:"ابھی رجسٹر کریں",s2:"اپنا کورس منتخب کریں",s3:"کلاس کا وقت طے کریں",s4:"سیکھنا شروع کریں",e1:"اپنی معلومات جمع کروائیں۔",e2:"اپنا پسندیدہ قرآنی یا اسلامی کورس منتخب کریں۔",e3:"مناسب کلاس شیڈول چنیں۔",e4:"گھر بیٹھے قرآن سیکھنے کا سفر شروع کریں۔",
+ah:"حافظ قرآن اکیڈمی کے بارے میں",at:"حافظ قرآن اکیڈمی کا مقصد قرآن مجید اور بنیادی اسلامی تعلیمات کو آسان، منظم اور آن لائن انداز میں قابلِ رسائی بنانا ہے۔",
+exp:"8 سال کا تجربہ",tt:"قرآن اور اسلامی تعلیمات کے استاد",ta:"تدریسی شعبے",tb:"استاد سے رابطہ کریں",
+ar:["قرآن","ناظرہ","حفظ","تجوید","اسلامی تعلیمات","دعائیں اور اذکار","چھوٹی سورتیں","بنیادی عربی"],
+rh:"حافظ قرآن اکیڈمی میں شامل ہوں",f1:"پورا نام",f2:"عمر",f3:"ملک",f4:"کورس منتخب کریں",f5:"پسندیدہ کلاس ٹائم",f6:"واٹس ایپ نمبر",f7:"پیغام",sub:"رجسٹریشن جمع کروائیں",pv:"🔒 آپ کی معلومات محفوظ رہتی ہیں اور صرف کلاسز کے سلسلے میں رابطے کے لیے استعمال ہوتی ہیں۔",
+ctah:"اپنا قرآن سیکھنے کا سفر شروع کریں",rn:"ابھی رجسٹر کریں",th:"طلبہ کی آراء",tr:"طالب علم کی رائے",tp:"“طلبہ کی حقیقی آراء یہاں دکھائی جائیں گی۔”",fh:"عمومی سوالات",
+q1:"کیا کلاسز آن لائن ہیں؟",q2:"کیا بچے شامل ہو سکتے ہیں؟",q3:"کیا بڑے بھی شامل ہو سکتے ہیں؟",q4:"کلاس کے لیے کیا چاہیے؟",q5:"کیا دوسرے ممالک کے طلبہ شامل ہو سکتے ہیں؟",q6:"کون سے کورسز دستیاب ہیں؟",q7:"رجسٹریشن کیسے کروں؟",q8:"اکیڈمی سے رابطہ کیسے کروں؟",
+a1:"جی ہاں، تمام کلاسز آن لائن ہوتی ہیں، آپ گھر بیٹھے سیکھ سکتے ہیں۔",a2:"جی ہاں، بچوں کو خوش آمدید، مبتدی بھی شامل ہو سکتے ہیں۔",a3:"جی ہاں، ہر سطح کے بالغ افراد شامل ہو سکتے ہیں۔",a4:"انٹرنیٹ کے ساتھ فون، ٹیبلٹ یا کمپیوٹر، قرآن مجید اور پڑھنے کے لیے پرسکون جگہ۔",a5:"جی ہاں، مختلف ممالک کے طلبہ آن لائن شامل ہو سکتے ہیں۔",a6:"ناظرہ، حفظ، تجوید، ترجمہ قرآن، دعائیں اور اذکار، اسلامی تعلیمات، چھوٹی سورتیں اور بنیادی عربی۔",a7:"اس صفحے پر رجسٹریشن فارم بھریں یا واٹس ایپ پر پیغام بھیجیں۔",a8:"03051311911 پر واٹس ایپ/کال کریں یا rashidsewagerashidsewage@gmail.com پر ای میل کریں۔",
+sent:"شکریہ! اپنی معلومات بھیجنے کا طریقہ منتخب کریں:",viaw:"واٹس ایپ پر بھیجیں",viae:"ای میل پر بھیجیں",cth:"رابطہ",send:"پیغام بھیجیں",tag:"قرآن سیکھیں • اسلام کو سمجھیں • قرآن کے مطابق زندگی گزاریں",ql:"فوری لنکس",lg:"زبانیں",so:"سوشل"},
+ar:{n1:"الرئيسية",n2:"من نحن",n3:"الدورات",n4:"المعلمون",n5:"كيف نعمل",n6:"التسجيل",n7:"الأسئلة الشائعة",n8:"اتصل بنا",join:"انضم الآن",
+h1:"تعلّم القرآن الكريم عبر الإنترنت",hs:"تعلّم القرآن الكريم والتجويد والحفظ والدراسات الإسلامية من منزلك.",hl:"القرآن • الحفظ • التجويد • الدراسات الإسلامية",start:"ابدأ التعلم",wa:"تواصل عبر واتساب",
+ch:"دوراتنا",lm:"اعرف المزيد",fhFees:"الرسوم والجدول",fsFees:"رسوم شهرية مناسبة ومواعيد مرنة من السادسة صباحًا حتى العاشرة مساءً.",scheduleTitle:"الجدول اليومي للحصص",scheduleSub:"مواعيد متاحة من 6:00 صباحًا حتى 10:00 مساءً.",feeNote:"هذه رسوم شهرية مقترحة للحصص الفردية عبر الإنترنت. يمكن تأكيد الرسوم والوقت النهائي عبر واتساب حسب الدورة ومدة الحصة وحاجة الطالب.",modalFeeLabel:"الرسوم الشهرية المقترحة",modalRegister:"سجّل في هذه الدورة",
+c1:"القرآن الناظرة",c2:"حفظ القرآن",c3:"التجويد",c4:"ترجمة القرآن",c5:"الأدعية والأذكار",c6:"الدراسات الإسلامية",c7:"السور القصيرة",c8:"العربية الأساسية",
+d1:"تعلّم قراءة القرآن الكريم بشكل صحيح وسلس.",d2:"احفظ القرآن من خلال برنامج تعليمي منظم.",d3:"تعلّم النطق الصحيح والمخارج وأحكام التجويد الأساسية.",d4:"افهم آيات مختارة ومعانيها الأساسية.",d5:"تعلّم الأدعية والأذكار المسنونة اليومية.",d6:"تعلّم الصلاة والكلمات والطهارة والآداب الإسلامية والمعرفة الإسلامية الأساسية.",d7:"تعلّم السور القصيرة للأطفال والمبتدئين.",d8:"تعلّم مفردات ومفاهيم عربية أساسية لفهم القرآن.",
+wh:"من يمكنه الانضمام؟",ws:"دروس قرآن عبر الإنترنت لمختلف المتعلمين.",w1:"الأطفال",w2:"الكبار",w3:"النساء",w4:"المبتدئون",
+yh:"لماذا تختارنا",y1:"دروس قرآن عبر الإنترنت",y2:"مواعيد مرنة",y3:"تعليم فردي",y4:"أطفال وكبار",y5:"مناسب للمبتدئين",y6:"القرآن + الدراسات الإسلامية",y7:"متوافق مع الجوال",y8:"طلاب من دول مختلفة",
+hh:"كيف نعمل",s1:"سجّل الآن",s2:"اختر دورتك",s3:"حدّد وقت الحصة",s4:"ابدأ التعلم",e1:"أرسل معلوماتك.",e2:"اختر دورة القرآن أو الدراسات الإسلامية المناسبة.",e3:"اختر جدول حصص مناسبًا.",e4:"ابدأ رحلتك مع القرآن من منزلك.",
+ah:"عن أكاديمية حافظ القرآن",at:"أكاديمية حافظ القرآن منصة لتعلّم القرآن عبر الإنترنت للأطفال والكبار. هدفنا أن نجعل التعليم القرآني والإسلامي متاحًا ومنظمًا وسهلًا من المنزل.",
+exp:"خبرة 8 سنوات",tt:"معلم القرآن والدراسات الإسلامية",ta:"مجالات التدريس",tb:"تواصل مع المعلم",
+ar:["القرآن","الناظرة","الحفظ","التجويد","الدراسات الإسلامية","الأدعية والأذكار","السور القصيرة","العربية الأساسية"],
+rh:"انضم إلى أكاديمية حافظ القرآن",f1:"الاسم الكامل",f2:"العمر",f3:"الدولة",f4:"اختر الدورة",f5:"وقت الحصة المفضل",f6:"رقم واتساب",f7:"الرسالة",sub:"إرسال التسجيل",pv:"🔒 معلوماتك سرية وتُستخدم فقط للتواصل معك بشأن دروسك.",
+ctah:"ابدأ رحلتك مع تعلّم القرآن",rn:"سجّل الآن",th:"آراء الطلاب",tr:"رأي طالب",tp:"“ستظهر هنا آراء الطلاب الحقيقية.”",fh:"الأسئلة الشائعة",
+q1:"هل الدروس عبر الإنترنت؟",q2:"هل يمكن للأطفال الانضمام؟",q3:"هل يمكن للكبار الانضمام؟",q4:"ماذا أحتاج للحصة؟",q5:"هل يمكن لطلاب من دول أخرى الانضمام؟",q6:"ما الدورات المتاحة؟",q7:"كيف أسجّل؟",q8:"كيف أتواصل مع الأكاديمية؟",
+a1:"نعم، جميع الدروس عبر الإنترنت، لذا يمكنك التعلم من المنزل.",a2:"نعم، الأطفال مرحَّب بهم، بمن فيهم المبتدئون.",a3:"نعم، الكبار من جميع المستويات مرحَّب بهم.",a4:"هاتف أو جهاز لوحي أو حاسوب مع اتصال بالإنترنت، ومصحف، ومكان هادئ للدراسة.",a5:"نعم، يمكن لطلاب من دول مختلفة الانضمام عبر الإنترنت.",a6:"الناظرة، الحفظ، التجويد، ترجمة القرآن، الأدعية والأذكار، الدراسات الإسلامية، السور القصيرة والعربية الأساسية.",a7:"املأ نموذج التسجيل في هذه الصفحة أو راسلنا عبر واتساب.",a8:"واتساب أو اتصال على 03051311911 أو بريد إلكتروني rashidsewagerashidsewage@gmail.com.",
+sent:"شكرًا لك! اختر طريقة إرسال بياناتك:",viaw:"أرسل عبر واتساب",viae:"أرسل عبر البريد الإلكتروني",cth:"اتصل بنا",send:"إرسال الرسالة",tag:"تعلّم القرآن • افهم الإسلام • عِش بالقرآن",ql:"روابط سريعة",lg:"اللغات",so:"التواصل الاجتماعي"}};
+const UR=["ناظرہ قرآن","حفظ القرآن","تجوید القرآن","ترجمہ قرآن","دعائیں اور اذکار","اسلامی تعلیمات","چھوٹی سورتیں","بنیادی عربی"];
+const CI=["📖","🕌","🎙️","📜","🤲","🌙","✨","🔤"],FI=["💻","🕒","🤝","👨‍👧","🌱","📚","📱","🌍"],SI=[1,2,3,4];
+const $=s=>document.querySelector(s);
+const AR=["اقرأ","حفظ","تجويد","ترجمة","دعاء","إسلام","سورت","عربية"];
+$('#cg').innerHTML=UR.map((u,i)=>`<div class="card"><div class="cb"><span lang="ar">${AR[i]}</span></div><div class="ic">${CI[i]}</div><h3 data-t="c${i+1}"></h3><div class="ur" lang="ur">${u}</div><p data-t="d${i+1}"></p><svg class="kid" aria-hidden="true"><use href="#kid"/></svg><a href="#course-details" class="lm" data-c="${i}" data-t="lm" role="button"></a></div>`).join('');
+const FEATURE_ACTIONS=[
+  {course:0},{action:"schedule"},{action:"one"},{action:"audience",value:"Children & Adults"},
+  {course:0},{course:5},{action:"mobile"},{action:"countries"}
+];
+$('#fg').innerHTML=FI.map((f,i)=>{const a=FEATURE_ACTIONS[i];return `<button type="button" class="feat feature-btn" data-feature="${i}" style="background:#fff;border-color:rgba(15,122,85,.15);text-align:inherit"><div class="ic">${f}</div><span data-t="y${i+1}" style="color:var(--fo)"></span><span class="mini-arrow">↗ View details</span></button>`}).join('');
+$('#st').innerHTML=SI.map(i=>`<div class="step"><div class="num">${i}</div><h3 data-t="s${i}" style="color:#fff"></h3><p data-t="e${i}" style="color:#bcd3c9"></p></div>`).join('');
+$('#fq').innerHTML=[1,2,3,4,5,6,7,8].map(i=>`<details><summary data-t="q${i}"></summary><p data-t="a${i}"></p></details>`).join('');
+const flash=el=>{el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')};
+const COURSE_DETAILS=[
+  {icon:'📖',en:'Nazra Quran',ur:'ناظرہ قرآن',ar:'قراءة القرآن',desc:'Learn to read the Holy Quran correctly, fluently and with proper daily practice.',points:['Correct Quran reading','Fluency and daily practice','Beginner-friendly lessons'],fee:'PKR 2,500'},
+  {icon:'🕌',en:'Hifz-ul-Quran',ur:'حفظ القرآن',ar:'حفظ القرآن',desc:'A structured memorization program with regular revision and lesson targets.',points:['Memorization support','Daily sabaq and revision','Structured learning plan'],fee:'PKR 4,000'},
+  {icon:'🎙️',en:'Tajweed',ur:'تجوید القرآن',ar:'التجويد',desc:'Improve pronunciation, Makharij and essential Tajweed rules while reciting.',points:['Makharij practice','Pronunciation correction','Essential Tajweed rules'],fee:'PKR 3,000'},
+  {icon:'📜',en:'Quran Translation',ur:'ترجمہ قرآن',ar:'ترجمة القرآن',desc:'Understand selected Quranic verses with simple Urdu/Arabic explanation and vocabulary.',points:['Selected verses','Word meanings','Understanding-focused lessons'],fee:'PKR 3,000'},
+  {icon:'🤲',en:'Duas, Azkar & Wazaif',ur:'دعائیں، اذکار اور وظائف',ar:'الأدعية والأذكار',desc:'Learn daily Masnoon Duas, Azkar and useful Islamic supplications with correct reading.',points:['Daily Masnoon Duas','Morning and evening Azkar','Practical daily use'],fee:'PKR 2,500'},
+  {icon:'🌙',en:'Islamic Studies',ur:'اسلامی تعلیمات',ar:'الدراسات الإسلامية',desc:'Learn Salah, Kalimas, Taharah, Islamic manners and essential Islamic knowledge.',points:['Salah and Kalimas','Taharah and basic Fiqh','Islamic manners and daily practice'],fee:'PKR 2,500'},
+  {icon:'✨',en:'Short Surahs',ur:'چھوٹی سورتیں',ar:'السور القصيرة',desc:'Memorize and correctly recite short Surahs for children and beginners.',points:['Short Surahs','Memorization practice','Revision and correction'],fee:'PKR 2,500'},
+  {icon:'🔤',en:'Basic Arabic',ur:'بنیادی عربی',ar:'العربية الأساسية',desc:'Learn basic Arabic vocabulary and concepts that help with Quran understanding.',points:['Basic vocabulary','Useful grammar concepts','Quran understanding support'],fee:'PKR 3,000'}
+];
+const EXTRA_COURSES=[
+  {icon:'🧎',en:'Namaz & Kalimas',ur:'نماز اور کلمے',ar:'الصلاة والكلمات',desc:'Learn the correct method of Salah, essential Kalimas and basic daily Islamic practices.',points:['Namaz step by step','Essential Kalimas','Daily Islamic practice'],fee:'PKR 2,000'},
+  {icon:'👨‍👩‍👧',en:'Quran for Kids',ur:'بچوں کا قرآن کورس',ar:'القرآن للأطفال',desc:'A gentle course for children covering Qaida, Nazra, short Surahs and basic Islamic manners.',points:['Qaida and Nazra','Short Surahs and Duas','Child-friendly learning'],fee:'PKR 2,500'}
+];
+const ALL_COURSES=[...COURSE_DETAILS,...EXTRA_COURSES];
+const TIME_SLOTS=[
+  '6:00 AM – 7:00 AM','7:00 AM – 8:00 AM','8:00 AM – 9:00 AM','9:00 AM – 10:00 AM',
+  '10:00 AM – 11:00 AM','11:00 AM – 12:00 PM','12:00 PM – 1:00 PM','1:00 PM – 2:00 PM',
+  '2:00 PM – 3:00 PM','3:00 PM – 4:00 PM','4:00 PM – 5:00 PM','5:00 PM – 6:00 PM',
+  '6:00 PM – 7:00 PM','7:00 PM – 8:00 PM','8:00 PM – 9:00 PM','9:00 PM – 10:00 PM'
+];
+const FEE_CARDS=[
+  ['📖','Nazra Quran','ناظرہ قرآن','PKR 2,500'],
+  ['🕌','Hifz-ul-Quran','حفظ القرآن','PKR 4,000'],
+  ['🎙️','Tajweed','تجوید القرآن','PKR 3,000'],
+  ['🤲','Duas, Azkar & Wazaif','دعائیں، اذکار اور وظائف','PKR 2,500'],
+  ['🌙','Islamic Studies','اسلامی تعلیمات','PKR 2,500'],
+  ['✨','Short Surahs','چھوٹی سورتیں','PKR 2,500'],
+  ['🧎','Namaz & Kalimas','نماز اور کلمے','PKR 2,000'],
+  ['👨‍👩‍👧','Quran for Kids','بچوں کا قرآن کورس','PKR 2,500']
+];
+function openCourse(i){
+  const c=ALL_COURSES[i]; if(!c)return;
+  $('#courseModalIcon').textContent=c.icon;
+  $('#courseModalTitle').textContent=L==='ur'?c.ur:L==='ar'?c.ar:c.en;
+  $('#courseModalArabic').textContent=c.ar;
+  $('#courseModalDesc').textContent=c.desc;
+  $('#courseModalPoints').innerHTML=c.points.map(x=>`<div class="course-point">${x}</div>`).join('');
+  $('#courseModalFee').textContent=c.fee;
+  $('#courseModalSchedule').innerHTML=TIME_SLOTS.slice(0,6).map(t=>`<div class="mini-time">🕒 ${t}</div>`).join('');
+  $('#courseModal').classList.add('show'); document.body.style.overflow='hidden';
+  $('#courseModalRegister').dataset.course=i;
+}
+function showFeature(i){
+  const a=FEATURE_ACTIONS[i]||{};
+  if(a.course!==undefined){openCourse(a.course);return;}
+  if(a.action==='schedule'){document.querySelector('#fees').scrollIntoView({behavior:'smooth'});return;}
+  if(a.action==='one'){openCourse(0);return;}
+  if(a.action==='audience'){document.querySelector('.who').scrollIntoView({behavior:'smooth'});return;}
+  if(a.action==='mobile'){alert('تمام کورسز موبائل، ٹیبلٹ اور لیپ ٹاپ پر آن لائن کیے جا سکتے ہیں۔');return;}
+  if(a.action==='countries'){alert('مختلف ممالک کے طلبہ آن لائن رجسٹریشن کر سکتے ہیں۔ وقت مقامی ٹائم زون کے مطابق طے کیا جا سکتا ہے۔');return;}
+}
+document.querySelectorAll('.feature-btn').forEach(b=>b.addEventListener('click',()=>showFeature(+b.dataset.feature)));
+$('#feeGrid').innerHTML=FEE_CARDS.map((x,i)=>`<button type="button" class="fee-card" data-fee="${i}" style="text-align:left"><div class="fee-icon">${x[0]}</div><h3>${x[1]}</h3><div class="ur" lang="ur">${x[2]}</div><div class="fee-price">${x[3]}</div><div class="fee-note">Monthly • One-to-one online class</div></button>`).join('');
+$('#scheduleGrid').innerHTML=TIME_SLOTS.map(t=>`<div class="time-slot"><b>🕒 ${t}</b><span>Available on request</span></div>`).join('');
+document.querySelectorAll('[data-fee]').forEach(b=>b.addEventListener('click',()=>openCourse(+b.dataset.fee)));
+function closeCourse(){ $('#courseModal').classList.remove('show'); document.body.style.overflow=''; }
+document.querySelectorAll('.lm').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openCourse(+a.dataset.c);}));
+$('#courseModalClose').onclick=closeCourse; $('#courseModal').addEventListener('click',e=>{if(e.target.id==='courseModal')closeCourse();}); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCourse();});
+$('#courseModalRegister').addEventListener('click',e=>{const i=+e.currentTarget.dataset.course; closeCourse(); setTimeout(()=>{const c=$('#cs');c.value=String(i);flash(c);flash($('#rf'));},100);});
+document.querySelectorAll('[data-m]').forEach(a=>a.addEventListener('click',()=>{const t=document.querySelector('#rf textarea');if(!t.value)t.value='Student type: '+a.dataset.m;flash($('#rf'))}));
+let L='en';
+function setLang(l){L=l;const d=T[l],h=document.documentElement;h.lang=l;h.dir=l==='en'?'ltr':'rtl';
+document.querySelectorAll('[data-t]').forEach(e=>{const v=d[e.dataset.t];if(typeof v==='string')e.textContent=v});
+$('#tl').innerHTML=d.ar.map(x=>`<li>${x}</li>`).join('');
+const sel=$('#cs');sel.innerHTML=ALL_COURSES.map((c,i)=>`<option value="${i}">${L==='ur'?c.ur:L==='ar'?c.ar:c.en}</option>`).join('');
+const ts=$('#timeSelect');if(ts)ts.innerHTML=TIME_SLOTS.map(t=>`<option>${t}</option>`).join('');
+document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+document.querySelectorAll('.mini-arrow').forEach(e=>e.textContent=l==='ur'?'↗ تفصیل دیکھیں':l==='ar'?'↗ عرض التفاصيل':'↗ View details');
+document.querySelectorAll('.fee-note').forEach(e=>e.textContent=l==='ur'?'ماہانہ • ایک فرد کی آن لائن کلاس':l==='ar'?'شهري • حصة فردية عبر الإنترنت':'Monthly • One-to-one online class');
+if($('#courseModal').classList.contains('show')){const i=+($('#courseModalRegister').dataset.course||0);const c=COURSE_DETAILS[i];if(c)$('#courseModalTitle').textContent=l==='ur'?c.ur:l==='ar'?c.ar:c.en;}
+}
+document.querySelectorAll('[data-l]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();setLang(b.dataset.l)}));
+$('#bg').onclick=()=>$('#nav').classList.toggle('open');
+$('#nav').addEventListener('click',()=>$('#nav').classList.remove('open'));
+const send=t=>{const a=document.createElement('a');a.href='https://wa.me/923051311911?text='+encodeURIComponent(t);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()};
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;e.preventDefault();const id=a.getAttribute('href').slice(1);const el=id&&document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});else if(!id)window.scrollTo({top:0,behavior:'smooth'})});
+function done(box,txt,sub){const wa='https://wa.me/923051311911?text='+encodeURIComponent(txt),em='mailto:rashidsewagerashidsewage@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(txt),d=T[L];box.hidden=false;box.innerHTML='<p style="margin:0 0 6px;font-weight:600;color:var(--fo)">'+d.sent+'</p><a class="btn gold" href="'+wa+'" target="_blank" rel="noopener">'+d.viaw+'</a><a class="btn dark-ghost" href="'+em+'">'+d.viae+'</a><a class="btn dark-ghost" href="tel:03051311911">📞 03051311911</a>';box.scrollIntoView({behavior:'smooth',block:'center'})}
+$('#rf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const t=`Registration - Hafiz Quran Academy\nName: ${f.get('n')}\nAge: ${f.get('a')}\nCountry: ${f.get('c')}\nCourse: ${f.get('s')}\nClass time: ${f.get('t')}\nWhatsApp: ${f.get('w')}\nMessage: ${f.get('m')}`;done($('#rok'),t,'Registration - Hafiz Quran Academy')};
+$('#cf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const t=`Name: ${f.get('n')}\nEmail: ${f.get('e')}\nMessage: ${f.get('m')}`;done($('#cok'),t,'Message - Hafiz Quran Academy')};
+setLang('en');
+</script>
+</body>
+</html>
